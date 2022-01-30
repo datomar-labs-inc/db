@@ -20,7 +20,7 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 // Package mysql wraps the github.com/go-sql-driver/mysql MySQL driver. See
-// https://upper.io/db.v3/mysql for documentation, particularities and usage
+// https://github.com/datomar-labs-inc/db/mysql for documentation, particularities and usage
 // examples.
 package mysql
 
@@ -35,11 +35,11 @@ import (
 	"database/sql"
 
 	_ "github.com/go-sql-driver/mysql" // MySQL driver.
-	db "upper.io/db.v3"
-	"upper.io/db.v3/internal/sqladapter"
-	"upper.io/db.v3/internal/sqladapter/compat"
-	"upper.io/db.v3/internal/sqladapter/exql"
-	"upper.io/db.v3/lib/sqlbuilder"
+	db "github.com/datomar-labs-inc/db"
+	"github.com/datomar-labs-inc/db/internal/sqladapter"
+	"github.com/datomar-labs-inc/db/internal/sqladapter/compat"
+	"github.com/datomar-labs-inc/db/internal/sqladapter/exql"
+	"github.com/datomar-labs-inc/db/lib/sqlbuilder"
 )
 
 // database is the actual implementation of Database

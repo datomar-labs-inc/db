@@ -24,8 +24,8 @@ package sqlite
 import (
 	"context"
 
-	"upper.io/db.v3/internal/sqladapter"
-	"upper.io/db.v3/lib/sqlbuilder"
+	"github.com/datomar-labs-inc/db/internal/sqladapter"
+	"github.com/datomar-labs-inc/db/lib/sqlbuilder"
 )
 
 type tx struct {

@@ -26,10 +26,10 @@ import (
 	"fmt"
 	"os"
 
-	db "upper.io/db.v3"
-	"upper.io/db.v3/internal/sqladapter"
-	"upper.io/db.v3/internal/testsuite"
-	"upper.io/db.v3/lib/sqlbuilder"
+	db "github.com/datomar-labs-inc/db"
+	"github.com/datomar-labs-inc/db/internal/sqladapter"
+	"github.com/datomar-labs-inc/db/internal/testsuite"
+	"github.com/datomar-labs-inc/db/lib/sqlbuilder"
 )
 
 var settings = ConnectionURL{

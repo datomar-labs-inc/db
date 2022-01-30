@@ -20,7 +20,7 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 // Package ql wraps the modernc.org/ql/driver QL driver. See
-// https://upper.io/db.v3/ql for documentation, particularities and usage
+// https://github.com/datomar-labs-inc/db/ql for documentation, particularities and usage
 // examples.
 package ql
 
@@ -33,11 +33,11 @@ import (
 	"sync/atomic"
 
 	_ "modernc.org/ql/driver" // QL driver
-	db "upper.io/db.v3"
-	"upper.io/db.v3/internal/sqladapter"
-	"upper.io/db.v3/internal/sqladapter/compat"
-	"upper.io/db.v3/internal/sqladapter/exql"
-	"upper.io/db.v3/lib/sqlbuilder"
+	db "github.com/datomar-labs-inc/db"
+	"github.com/datomar-labs-inc/db/internal/sqladapter"
+	"github.com/datomar-labs-inc/db/internal/sqladapter/compat"
+	"github.com/datomar-labs-inc/db/internal/sqladapter/exql"
+	"github.com/datomar-labs-inc/db/lib/sqlbuilder"
 )
 
 // database is the actual implementation of Database

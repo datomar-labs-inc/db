@@ -24,9 +24,9 @@ package ql
 import (
 	"database/sql"
 
-	db "upper.io/db.v3"
-	"upper.io/db.v3/internal/sqladapter"
-	"upper.io/db.v3/lib/sqlbuilder"
+	db "github.com/datomar-labs-inc/db"
+	"github.com/datomar-labs-inc/db/internal/sqladapter"
+	"github.com/datomar-labs-inc/db/lib/sqlbuilder"
 )
 
 // table is the actual implementation of a collection.

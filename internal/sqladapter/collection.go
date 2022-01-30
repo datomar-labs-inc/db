@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"reflect"
 
-	db "upper.io/db.v3"
-	"upper.io/db.v3/internal/sqladapter/exql"
-	"upper.io/db.v3/lib/reflectx"
+	db "github.com/datomar-labs-inc/db"
+	"github.com/datomar-labs-inc/db/internal/sqladapter/exql"
+	"github.com/datomar-labs-inc/db/lib/reflectx"
 )
 
 var mapper = reflectx.NewMapper("db")

@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	db "upper.io/db.v3"
+	db "github.com/datomar-labs-inc/db"
 )
 
 func TestSelect(t *testing.T) {

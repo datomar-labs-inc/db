@@ -9,11 +9,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	db "upper.io/db.v3"
-	"upper.io/db.v3/internal/cache"
-	"upper.io/db.v3/internal/sqladapter/compat"
-	"upper.io/db.v3/internal/sqladapter/exql"
-	"upper.io/db.v3/lib/sqlbuilder"
+	db "github.com/datomar-labs-inc/db"
+	"github.com/datomar-labs-inc/db/internal/cache"
+	"github.com/datomar-labs-inc/db/internal/sqladapter/compat"
+	"github.com/datomar-labs-inc/db/internal/sqladapter/exql"
+	"github.com/datomar-labs-inc/db/lib/sqlbuilder"
 )
 
 var (

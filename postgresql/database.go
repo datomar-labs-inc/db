@@ -20,7 +20,7 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 // Package postgresql wraps the github.com/lib/pq PostgreSQL driver. See
-// https://upper.io/db.v3/postgresql for documentation, particularities and
+// https://github.com/datomar-labs-inc/db/postgresql for documentation, particularities and
 // usage examples.
 package postgresql
 
@@ -29,17 +29,18 @@ import (
 	"database/sql"
 	"database/sql/driver"
 	"fmt"
+	"os"
 	"reflect"
 	"strings"
 	"sync"
 	"time"
 
 	_ "github.com/lib/pq" // PostgreSQL driver.
-	db "upper.io/db.v3"
-	"upper.io/db.v3/internal/sqladapter"
-	"upper.io/db.v3/internal/sqladapter/compat"
-	"upper.io/db.v3/internal/sqladapter/exql"
-	"upper.io/db.v3/lib/sqlbuilder"
+	db "github.com/datomar-labs-inc/db"
+	"github.com/datomar-labs-inc/db/internal/sqladapter"
+	"github.com/datomar-labs-inc/db/internal/sqladapter/compat"
+	"github.com/datomar-labs-inc/db/internal/sqladapter/exql"
+	"github.com/datomar-labs-inc/db/lib/sqlbuilder"
 )
 
 // database is the actual implementation of Database
@@ -119,7 +120,7 @@ func (d *database) open() error {
 	d.SQLBuilder = sqlbuilder.WithSession(d.BaseDatabase, template)
 
 	connFn := func() error {
-		sess, err := sql.Open("postgres", d.ConnectionURL().String())
+		sess, err := sql.Open(os.Getenv("POSTGRES_INSTRUMENTED_DRIVER"), d.ConnectionURL().String())
 		if err == nil {
 			sess.SetConnMaxLifetime(db.DefaultSettings.ConnMaxLifetime())
 			sess.SetMaxIdleConns(db.DefaultSettings.MaxIdleConns())

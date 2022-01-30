@@ -27,7 +27,7 @@ import (
 	"fmt"
 	"sync"
 
-	db "upper.io/db.v3"
+	db "github.com/datomar-labs-inc/db"
 )
 
 var (

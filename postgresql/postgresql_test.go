@@ -35,9 +35,9 @@ import (
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
-	db "upper.io/db.v3"
-	"upper.io/db.v3/internal/testsuite"
-	"upper.io/db.v3/lib/sqlbuilder"
+	db "github.com/datomar-labs-inc/db"
+	"github.com/datomar-labs-inc/db/internal/testsuite"
+	"github.com/datomar-labs-inc/db/lib/sqlbuilder"
 )
 
 type customJSONB struct {
