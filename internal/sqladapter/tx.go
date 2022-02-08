@@ -24,6 +24,7 @@ package sqladapter
 import (
 	"context"
 	"database/sql"
+	"github.com/datomar-labs-inc/db/internal/tracehelper"
 	"sync/atomic"
 
 	db "github.com/datomar-labs-inc/db"
@@ -99,7 +100,7 @@ func RunTx(d sqlbuilder.Database, ctx context.Context, fn func(tx sqlbuilder.Tx)
 	parentSpan := trace.SpanFromContext(ctx)
 
 	if parentSpan.IsRecording() {
-		txSpanCtx, txSpan := tracer.Start(ctx, "tx")
+		txSpanCtx, txSpan := tracehelper.Tracer.Start(ctx, "tx")
 		defer txSpan.End()
 
 		ctx = txSpanCtx

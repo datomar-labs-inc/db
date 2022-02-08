@@ -1,9 +1,9 @@
-package sqladapter
+package tracehelper
 
 import "go.opentelemetry.io/otel/trace"
 
-var tracer trace.Tracer
+var Tracer trace.Tracer
 
 func SetTracer(t trace.Tracer) {
-	tracer = t
+	Tracer = t
 }
