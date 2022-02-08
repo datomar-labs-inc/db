@@ -28,6 +28,7 @@ import (
 
 	db "github.com/datomar-labs-inc/db"
 	"github.com/datomar-labs-inc/db/lib/sqlbuilder"
+	"go.opentelemetry.io/otel/trace"
 )
 
 // DatabaseTx represents a database session within a transaction.
@@ -95,6 +96,15 @@ func (w *databaseTx) Rollback() error {
 
 // RunTx creates a transaction context and runs fn within it.
 func RunTx(d sqlbuilder.Database, ctx context.Context, fn func(tx sqlbuilder.Tx) error) error {
+	parentSpan := trace.SpanFromContext(ctx)
+
+	if parentSpan.IsRecording() {
+		txSpanCtx, txSpan := tracer.Start(ctx, "tx")
+		defer txSpan.End()
+
+		ctx = txSpanCtx
+	}
+
 	tx, err := d.NewTx(ctx)
 	if err != nil {
 		return err
